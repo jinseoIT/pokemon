@@ -1,15 +1,13 @@
 /* router */
 import Home from './pages/Home'
-import Post from './pages/Post'
+import View from './pages/View'
 import NotFound from './pages/NotFound'
 
 const root = document.querySelector('#app');
 
 const routes = [
     { path: "/", component: Home },
-    { path: "/post/:id", component: Post },
-    // { path: "/upload", component: Upload },
-    // { path: "/edit/:id", component: Edit },
+    { path: "/view/:id", component: View }
   ];
   
   const render = (path) => {

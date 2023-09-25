@@ -1,0 +1,25 @@
+.poket_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poketmon_card_container {
+  padding: 0 10px;
+  margin: 40px 0;
+}
+
+.poketmon_card_container .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+}
+
+.bx-txt {
+  padding: 10px 18px 0;
+  text-align: center;
+}

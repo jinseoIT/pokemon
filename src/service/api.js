@@ -1,4 +1,5 @@
-const API_END_POINT = 'https://pokeapi.co/api/v2/pokemon?limit=19&offset=0'
+export const API_END_POINT = 'https://pokeapi.co/api/v2/pokemon'
+export const IMG_END_POINT = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/'
 
 export const request = async (url, options = {}) => {
   try {
@@ -13,4 +14,9 @@ export const request = async (url, options = {}) => {
   } catch (e) {
     alert(e.message);
   }
+}
+
+export const getPoketList = async (offset = 0, limit = 20) => {
+  // https://pokeapi.co/api/v2/pokemon?limit=19&offset=0
+  return request(`?offset=${offset}&limit=${limit}`)
 }

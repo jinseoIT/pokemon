@@ -16,37 +16,15 @@ module.exports = {
       // historyApiFallBack: 히스토리 API를 사용하는 SPA 개발시 설정한다. 404가 발생하면 index.html로 리다이렉트한다.
       historyApiFallback: true,
     },
-    // module: {
-    //   rules: [
-    //     {
-    //       test: /\.s?css$/i,
-    //       use: ["style-loader", "css-loader", "sass-loader"],
-    //     },
-    //     {
-    //       test: /\.js$/,
-    //       exclude: /node_modules/,
-    //       use: {
-    //         loader: "babel-loader",
-    //         options: {
-    //           presets: ["@babel/preset-env"],
-    //         },
-    //       },
-    //     },
-    //     {
-    //       test: /\.(jpg|jpeg|gif|png|svg|ico)?$/,
-    //       use: {
-    //         loader: "url-loader",
-    //         options: {
-    //           limit: 10000,
-    //           fallback: "file-loader",
-    //           name: "[name].[ext]?[hash]",
-    //           outputPath: "img",
-    //           publicPath: "../img",
-    //         },
-    //       },
-    //     },
-    //   ],
-    // },
+    module: {
+      rules: [
+        // CSS 파일 로더 설정
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader']
+        }
+      ]
+    },
     plugins: [
       new HtmlWebpackPlugin({
         // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
