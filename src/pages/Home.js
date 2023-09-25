@@ -33,7 +33,7 @@ class Home extends Page {
 
   async $getPoketList() {
     const data = await getPoketList(0,30);
-    console.log("data ::", data );
+    console.log("list ::", data );
     this.setState({pokets: data.results});
   }
 }

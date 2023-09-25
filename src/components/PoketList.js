@@ -1,6 +1,7 @@
 import PoketCard from "./PoketCard";
 import Componenet from '../core/Component';
 import '../styles/components/poket.css'
+import { getPoketmonDetail } from "../service/api";
 
 class PoketList extends Componenet {
     template() {

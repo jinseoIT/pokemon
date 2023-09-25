@@ -1,4 +1,4 @@
-export const API_END_POINT = 'https://pokeapi.co/api/v2/pokemon'
+export const API_END_POINT = 'https://pokeapi.co/api/v2/'
 export const IMG_END_POINT = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/'
 
 export const request = async (url, options = {}) => {
@@ -12,11 +12,15 @@ export const request = async (url, options = {}) => {
     }
     throw new Error('API 통신 실패')
   } catch (e) {
-    alert(e.message);
+    console.log(e.message);
   }
 }
 
 export const getPoketList = async (offset = 0, limit = 20) => {
   // https://pokeapi.co/api/v2/pokemon?limit=19&offset=0
-  return request(`?offset=${offset}&limit=${limit}`)
+  return request(`pokemon?offset=${offset}&limit=${limit}`)
+}
+
+export const getPoketmonDetail = async (poketmonId) => {
+  return request(`pokemon-species/${poketmonId}`)
 }
