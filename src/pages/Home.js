@@ -1,7 +1,7 @@
 import Header from "../components/Header";
-import PoketList from "../components/PoketList";
+import PoketList from "../components/PokeList";
 import Page from "../core/Page";
-import { getPoketList } from "../service/api";
+import { getPokeList } from "../service/api";
 
 class Home extends Page {
   template() {
@@ -9,30 +9,30 @@ class Home extends Page {
     <header class='header'></header>
     <main>
     	<h2>Home Page</h2>
-      <section class='poket_list_container'></section>
+      <section class='poke_list_container'></section>
     </main>
     `;
   }
   
   setup() {
     this.$state = {};
-    this.$getPoketList();
+    this.$getPokeList();
   }
 
 	mounted() {
 		const $header = document.querySelector('.header');
-    const $poketListContainer = document.querySelector('.poket_list_container')
+    const $pokeListContainer = document.querySelector('.poke_list_container')
 
 		new Header($header, {
 			header: $header
 		})
-    new PoketList($poketListContainer, {
+    new PoketList($pokeListContainer, {
       pokets: this.$state.pokets,
     });
 	}
 
-  async $getPoketList() {
-    const data = await getPoketList(0,30);
+  async $getPokeList() {
+    const data = await getPokeList(0,30);
     console.log("list ::", data );
     this.setState({pokets: data.results});
   }

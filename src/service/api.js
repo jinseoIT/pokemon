@@ -16,11 +16,11 @@ export const request = async (url, options = {}) => {
   }
 }
 
-export const getPoketList = async (offset = 0, limit = 20) => {
+export const getPokeList = async (offset = 0, limit = 20) => {
   // https://pokeapi.co/api/v2/pokemon?limit=19&offset=0
   return request(`pokemon?offset=${offset}&limit=${limit}`)
 }
 
-export const getPoketmonDetail = async (poketmonId) => {
+export const getPokemonDetail = async (poketmonId) => {
   return request(`pokemon-species/${poketmonId}`)
 }

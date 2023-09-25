@@ -1,14 +1,14 @@
-.poket_list {
+.poke_list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.poketmon_card_container {
+.pokemon_card_container {
   padding: 0 10px;
   margin: 40px 0;
 }
 
-.poketmon_card_container .img {
+.pokemon_card_container .img {
   display: flex;
   justify-content: center;
   align-items: center;
