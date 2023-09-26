@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build", 
+    "predeploy": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -21,5 +23,10 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
-  }
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "gh-pages": "^6.0.0"
+  },
+  "homepage": "https://github.com/jinseoIT/pokemon"
 }
