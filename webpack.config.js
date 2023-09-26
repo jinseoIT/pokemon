@@ -49,9 +49,9 @@ module.exports = {
       ]
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
-        template: 'index.html',
+      new HtmlWebpackPlugin({   // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
+        filename: "index.html",
+        template: path.resolve(__dirname, "./public/index.html"),
       }),
     ],
 }

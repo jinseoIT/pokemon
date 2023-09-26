@@ -18,6 +18,7 @@
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
     "url-loader": "^4.1.1",
@@ -26,8 +27,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "-": "^0.0.1",
-    "gh-pages": "^6.0.0"
+    "-": "^0.0.1"
   },
   "homepage": "https://github.com/jinseoIT/pokemon"
 }
