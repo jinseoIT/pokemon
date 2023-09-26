@@ -5,9 +5,9 @@ module.exports = {
     mode: 'none',
     entry: '/src/index.js',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
+      filename: 'bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/',
     },
     devServer: {
       port: 3000,
@@ -22,7 +22,30 @@ module.exports = {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader']
-        }
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        },
+        {
+          test: /\.(jpg|jpeg|gif|png|svg|ico)?$/,
+          use: {
+            loader: "url-loader",
+            options: {
+              limit: 10000,
+              fallback: "file-loader",
+              name: "[name].[ext]?[hash]",
+              outputPath: "img",
+              publicPath: "../img",
+            },
+          },
+        },
       ]
     },
     plugins: [

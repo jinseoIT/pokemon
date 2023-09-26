@@ -1,8 +1,8 @@
 import PokeCard from "./PokeCard";
-import Componenet from '../core/Component';
+import Page from '../core/Page';
 import '../styles/components/poke.css'
 
-class PokeList extends Componenet {
+class PokeList extends Page {
     template() {
         return `<ul class="poke_list"></ul>`
     }

@@ -8,7 +8,6 @@ class Home extends Page {
     return `
     <header class='header'></header>
     <main>
-    	<h2>Home Page</h2>
       <section class='poke_list_container'></section>
     </main>
     `;
@@ -32,8 +31,7 @@ class Home extends Page {
 	}
 
   async $getPokeList() {
-    const data = await getPokeList(0,30);
-    console.log("list ::", data );
+    const data = await getPokeList();
     this.setState({pokets: data.results});
   }
 }

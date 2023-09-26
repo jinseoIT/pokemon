@@ -1,11 +1,17 @@
+.poke_list_container {
+  padding : 1rem 3rem 0;
+}
+
 .poke_list {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .pokemon_card_container {
   padding: 0 10px;
   margin: 40px 0;
+  cursor: pointer;
 }
 
 .pokemon_card_container .img {
@@ -15,21 +21,46 @@
   padding: 20px;
   border: 1px solid #e8e8e8;
   border-radius: 10px;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 
-.bx-txt {
+.poke-info .poke-txt{
   padding: 10px 18px 0;
   text-align: left;
+  margin-bottom: 10px;
 }
 
-.bx-txt p {
+.poke-info p {
   font-size: 15px;
   font-weight: 300;
   color: #999;
+  margin-bottom: 5px;
 }
 
-.bx-txt h3 {
+.poke-info h3 {
   font-size : 18px;
+}
+
+.poke-info .poke-type{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.poke-info button {
+  flex: 1 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  height: 1.8rem;
+  border-radius: 12px;
+  border: none;
+}
+
+.poke-info span {
+  display: inline-block;
+  line-height: 1.25rem;
+  color: #fff;
 }
