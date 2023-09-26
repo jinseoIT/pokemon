@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import PoketList from "../components/PokeList";
+import PokeList from "../components/PokeList";
 import Page from "../core/Page";
 import { getPokeList } from "../service/api";
 
@@ -25,7 +25,7 @@ class Home extends Page {
 		new Header($header, {
 			header: $header
 		})
-    new PoketList($pokeListContainer, {
+    new PokeList($pokeListContainer, {
       pokets: this.$state.pokets,
     });
 	}

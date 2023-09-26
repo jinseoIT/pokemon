@@ -1,13 +1,13 @@
 /* router */
 import Home from './pages/Home'
-import View from './pages/View'
+import Detail from './pages/Detail'
 import NotFound from './pages/NotFound'
 
 const root = document.querySelector('#app');
 
 const routes = [
     { path: "/", component: Home },
-    { path: "/view/:id", component: View }
+    { path: "/pokemon/:id", component: Detail }
   ];
   
   const render = (path) => {

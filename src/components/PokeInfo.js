@@ -30,7 +30,7 @@ class PokeInfo extends Page {
 
 		async $getPokemonDetail() {
 			const {pokemonId} = this.$props;
-			// TODO PromiseAll 변경필요
+			// @TODO PromiseAll 변경필요
 			const species = await getPokemoSpecies(pokemonId);
 			const info = await getPokemonInfo(pokemonId);
 			this.setState({info, species})

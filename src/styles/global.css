@@ -16,7 +16,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     line-height: 1;
-  }
+  } */
   
   ul,
   ol,
@@ -55,11 +55,11 @@
     cursor: pointer;
   }
   
-  #app {
+  /* #app {
     width: 100vw;
     max-width: 640px;
     height: 100vh;
   
     padding: 0 1rem;
-  }
-   */
+  } */
+  
