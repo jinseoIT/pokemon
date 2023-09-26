@@ -1,0 +1,71 @@
+.pokemon_detail_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top : 2.5rem;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 20px 0px rgba(0,0,0,0.2);
+  max-width: 480px;
+}
+
+.pokemon_detail_container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #999;
+  margin-top: 15px;
+}
+
+.pokemon_detail_container h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding : 5px 0 10px;
+}
+
+.pokemon_detail_container .poke_type {
+  display: flex;
+  gap: 8px;
+}
+
+.pokemon_detail_container .poke_type button {
+  color : #fff;
+  gap: 2px;
+  height: 1.8rem;
+  width: 6rem;
+  border-radius: 16px;
+  border: none;
+}
+
+.pokemon_detail_container .flavor_txt {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.poke_size_container {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.poke_size_info_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.poke_size_info_wrap div {
+  display: inline-block;
+  font-weight: 500;
+  background-color: #e9ecee;
+  color: #666;
+  padding: 5px 20px;
+  border-radius: 16px;
+}
+
+.poke_size_info_wrap span {
+  text-align: center;
+  margin-top: .75rem;
+}
+
+

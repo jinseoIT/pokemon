@@ -1,21 +1,28 @@
 import Component from "../core/Component";
 import '../styles/components/header.css';
 import logo from '../assets/main_logo.png';
-// import Button from "./common/Button";
+import { navigateTo } from "../router";
 
 class Header extends Component {
     template() {
         return `
-					<img src="${logo}" alt="logo" width="180"/>
+					<img src="${logo}" alt="logo" width="180" data-component="header-logo"/>
         `
     }
-    // mounted() {
-    //   const isHomePage = window.location.pathname = "/";
 
-		// 	// if(!isHomePage) {
-		// 	// 	new Button()
-		// 	// }
-    // }
+    setEvent() {
+      this.addEvent('click', '[data-component="header-logo"]', () => {
+        this.handleNavigateToDashboard();
+      });
+    }
+
+    handleNavigateToBack() {
+      history.back();
+    }
+
+    handleNavigateToDashboard() {
+      navigateTo('/');
+    }
 }
 
 export default Header;

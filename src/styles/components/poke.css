@@ -33,7 +33,7 @@
 
 .poke-info p {
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   color: #999;
   margin-bottom: 5px;
 }
@@ -55,7 +55,7 @@
   align-items: center;
   gap: 2px;
   height: 1.8rem;
-  border-radius: 12px;
+  border-radius: 16px;
   border: none;
 }
 

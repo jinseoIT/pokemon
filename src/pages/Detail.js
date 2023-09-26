@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Page from "../core/Page";
+import '../styles/components/detail.css'
 import { IMG_END_POINT, getPokemoSpecies, getPokemonInfo } from "../service/api";
 import { convertedText } from "../utils/convertText";
 import { typeColor, typeIcon } from "../utils/pokeType";
@@ -9,18 +10,32 @@ class Detail extends Page {
       const {info, species} = this.$state
       const types = (info?.types ?? []).reduce((acc, curr) => 
 				acc + `<button style="background:${typeColor[curr.type.name]};">
-				<img src=${typeIcon[curr.type.name]} alt="rock" width="20"/>
+				<img src=${typeIcon[curr.type.name]} alt="type icon" width="20"/>
 					<span>${convertedText[curr.type.name]}</span>
 				</button>` ,'');
+
       return `
       <header class='header'></header>
       <main>
-        <h1>Pokemon Page</h1>
         <div class="pokemon_detail_container">
-          <img src='${IMG_END_POINT}${this.$params}.gif' alt='포켓몬 이미지'/>
+          <div class="pokemon_img_wrap">
+            <img src='${IMG_END_POINT}${this.$params}.gif' alt='포켓몬 이미지' width="120" height="120"/>
+          </div>
           <p>No.${String(this.$params).padStart(4,'0')}</p>
           <h3>${species?.names?.[2]?.name ?? ''}</h3>
-          <div class="poke-type">${types}</div>
+          <div class="poke_type">${types}</div>
+          <p>${species?.genera?.[1]?.genus}</p>
+          <span class="flavor_txt">${species?.flavor_text_entries?.[23]?.flavor_text ?? "??????"}</span>
+          <div class="poke_size_container">
+            <div class="poke_size_info_wrap">
+              <div class="poke_size_info">신장</div>
+              <span>${info?.height ? info?.height / 10 : "??"} m</span>
+            </div>
+            <div class="poke_size_info_wrap">
+              <div class="poke_size_info">무게</div>
+              <span>${info?.weight ?  info?.weight / 10 : "??"} kg</span>
+            </div>
+          </div>
         </div>
       </main>
       `
