@@ -8,23 +8,10 @@ module.exports = {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
       clean: true,
-      // publicPath: '/',
-    },
-    devServer: {
-      port: 3000,
-      hot: true,
-      compress: true,
-      // historyApiFallBack: 히스토리 API를 사용하는 SPA 개발시 설정한다. 404가 발생하면 index.html로 리다이렉트한다.
-      historyApiFallback: true,
+      assetModuleFilename: './src/assets/[hash][ext][query]'
     },
     module: {
       rules: [
-        // CSS 파일 로더 설정
-        {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
-          exclude: /node_modules/,
-        },
         {
           test: /\.js$/,
           exclude: /node_modules/,
@@ -43,8 +30,7 @@ module.exports = {
               limit: 10000,
               fallback: "file-loader",
               name: "[name].[ext]?[hash]",
-              outputPath: "img",
-              publicPath: "../img",
+              outputPath: "src/assets",
             },
           },
         },
