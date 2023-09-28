@@ -42,7 +42,7 @@ class Detail extends Page {
     }
 
     setup() {
-			this.$params = window.location.pathname.split("/")[2];
+			this.$params = window.location.pathname.split("/")[3];
       this.$state = {};
 			this.$getPokemonDetail(this.$params);
 		}

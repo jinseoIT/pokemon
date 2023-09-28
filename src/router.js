@@ -3,19 +3,21 @@ import Home from './pages/Home'
 import Detail from './pages/Detail'
 import NotFound from './pages/NotFound'
 
+export const baseUrl =  '/pokemon/'
 const root = document.querySelector('#app');
 
 const routes = [
-    { path: "/", component: Home },
-    { path: "/pokemons/:id", component: Detail }
+    { path: baseUrl , component: Home },
+    { path: `${baseUrl}pokemons/:id`, component: Detail }
   ];
   
   const render = (path) => {
+    console.log("path ::", path);
     const matchedRoute = routes.map((route) => {
       const isMatch = path.match(getPathConvert(route.path));
       return { route, isMatch };
     }).find((matchedRoute) => matchedRoute.isMatch !== null);
-  
+    console.log("matchedRoute ::", matchedRoute);
     matchedRoute ? new matchedRoute.route.component(root) : new NotFound(root);
   };
   

@@ -1,6 +1,7 @@
 import Component from "../core/Component";
 import '../styles/components/header.css';
 import logo from '../assets/main_logo.png';
+import { baseUrl } from "../router";
 import { navigateTo } from "../router";
 
 class Header extends Component {
@@ -21,7 +22,7 @@ class Header extends Component {
     }
 
     handleNavigateToDashboard() {
-      navigateTo('/');
+      navigateTo(baseUrl);
     }
 }
 

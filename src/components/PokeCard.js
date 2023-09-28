@@ -1,5 +1,5 @@
 import Component from "../core/Component";
-import {navigateTo} from '../router';
+import {baseUrl, navigateTo} from '../router';
 import { IMG_END_POINT } from "../service/api";
 import PokeInfo from "./PokeInfo";
 
@@ -25,7 +25,7 @@ class PoketCard extends Component {
 		}
 
 		goDetailPage(id){
-			navigateTo(`/pokemons/${id}`);
+			navigateTo(`${baseUrl}pokemons/${id}`);
 	}
 
 	mounted() {
