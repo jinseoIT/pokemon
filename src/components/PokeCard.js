@@ -1,7 +1,7 @@
 import Component from "../core/Component";
 import {navigateTo} from '../router';
 import { IMG_END_POINT } from "../service/api";
-import PoketInfo from "./PokeInfo";
+import PokeInfo from "./PokeInfo";
 
 class PoketCard extends Component {
     template() {
@@ -25,13 +25,13 @@ class PoketCard extends Component {
 		}
 
 		goDetailPage(id){
-			navigateTo(`/pokemon/${id}`);
+			navigateTo(`/pokemons/${id}`);
 	}
 
 	mounted() {
 		const {pokemonId} = this.$props.pokemon
 		const $poketmonInfo = document.querySelector(`.poketmon_card_info${pokemonId}`);
-		new PoketInfo($poketmonInfo, {
+		new PokeInfo($poketmonInfo, {
 			pokemonId
 		});	
 	}

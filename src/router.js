@@ -7,23 +7,19 @@ const root = document.querySelector('#app');
 
 const routes = [
     { path: "/", component: Home },
-    { path: "/pokemon/:id", component: Detail }
+    { path: "/pokemons/:id", component: Detail }
   ];
   
   const render = (path) => {
-    const matchedRoutes = routes.map((route) => {
-      const isMatch = path.match(pathToRegex(route.path));
+    const matchedRoute = routes.map((route) => {
+      const isMatch = path.match(getPathConvert(route.path));
       return { route, isMatch };
-    });
+    }).find((matchedRoute) => matchedRoute.isMatch !== null);
   
-    const match = matchedRoutes.find(
-      (matchedRoute) => matchedRoute.isMatch !== null
-    );
-  
-    match ? new match.route.component(root) : new NotFound(root);
+    matchedRoute ? new matchedRoute.route.component(root) : new NotFound(root);
   };
   
-  const pathToRegex = (path) =>
+  const getPathConvert = (path) =>
     new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
   
   export const navigateTo = (path) => {
