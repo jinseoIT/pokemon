@@ -12,12 +12,10 @@ const routes = [
   ];
   
   const render = (path) => {
-    console.log("path ::", path);
     const matchedRoute = routes.map((route) => {
       const isMatch = path.match(getPathConvert(route.path));
       return { route, isMatch };
     }).find((matchedRoute) => matchedRoute.isMatch !== null);
-    console.log("matchedRoute ::", matchedRoute);
     matchedRoute ? new matchedRoute.route.component(root) : new NotFound(root);
   };
   
