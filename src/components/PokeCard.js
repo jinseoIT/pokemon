@@ -8,10 +8,12 @@ class PoketCard extends Component {
 		const {pokemonId, name} = this.$props.pokemon
     return ` 
          <li class="pokemon_card_container" data-pokemon-id=${pokemonId}>
-				 		<div class="img">
-            <img src='${IMG_END_POINT}${pokemonId}.gif' alt='포켓몬 ${name} 이미지'/>
+				 	<div class="img_container">
+				 		<div class="img_wrap">
+         	   	<img src='${IMG_END_POINT}${pokemonId}.gif' alt='포켓몬 ${name} 이미지'/>
 						</div>
-						<div class="poketmon_card_info${pokemonId}"/>
+					</div>
+					<div class="poketmon_card_info${pokemonId}"/>
          </li>
         `
     }
