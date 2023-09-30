@@ -30,12 +30,19 @@
 }
 
 .pokemon_detail_container .poke_type button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color : #fff;
   gap: 2px;
   height: 1.8rem;
   width: 6rem;
   border-radius: 16px;
   border: none;
+}
+
+.pokemon_detail_container .poke_type button span{
+  padding-top: 4px;
 }
 
 .pokemon_detail_container .flavor_txt {
