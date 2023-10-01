@@ -24,16 +24,18 @@ const routes = [
   
   export const navigateTo = (path) => {
     if (window.location.pathname !== path) {
+      // 해당 path render
       window.history.pushState({}, "", window.location.origin + path);
       render(path);
     }
   };
   
   export const initializeRouter = () => {
+    // 뒤로가기시 해당 path render
     window.addEventListener("popstate", () => {
       render(window.location.pathname);
     });
-  
+    // DOM 구성이 완료되었을 때 document 객체에서 실행. 
     window.addEventListener("DOMContentLoaded", () => {
       render(window.location.pathname);
     });
