@@ -1,9 +1,9 @@
-import Page from "../core/Page";
+import Component from "../core/Component";
 import { getPokemoSpecies, getPokemonInfo } from "../service/api";
 import { convertedText } from "../utils/convertText";
 import { typeColor, typeIcon } from "../utils/pokeType";
 
-class PokeInfo extends Page {
+class PokeInfo extends Component {
     template() {
 			const {pokemonId} = this.$props
 			const {info, species} = this.$state

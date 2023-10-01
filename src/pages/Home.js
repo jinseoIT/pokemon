@@ -1,9 +1,9 @@
 import Header from "../components/Header";
 import PokeList from "../components/PokeList";
-import Page from "../core/Page";
+import Component from "../core/Component";
 import { getPokeList } from "../service/api";
 
-class Home extends Page {
+class Home extends Component {
   template() {
     return `
     <header class='header'></header>

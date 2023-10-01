@@ -1,10 +1,10 @@
 import PokeCard from "./PokeCard";
-import Page from '../core/Page';
+import Component from '../core/Component';
 import '../styles/components/poke.css'
 import { getPokeList } from "../service/api";
 import {baseUrl, navigateTo} from '../router';
 
-class PokeList extends Page {
+class PokeList extends Component {
 		isUpdateList = true;
 		nextOffest = 0;
     template() {

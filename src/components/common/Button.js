@@ -1,6 +1,6 @@
-import Page from "../../core/Page";
+import Component from "../../core/Component";
 
-class Button extends Page {
+class Button extends Component {
   template() {
     const { content, className, disabled} = this.$props
     return `

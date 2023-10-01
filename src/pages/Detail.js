@@ -1,11 +1,11 @@
 import Header from "../components/Header";
-import Page from "../core/Page";
+import Component from "../core/Component";
 import '../styles/components/detail.css'
 import { IMG_END_POINT, getPokemoSpecies, getPokemonInfo } from "../service/api";
 import { convertedText } from "../utils/convertText";
 import { typeColor, typeIcon } from "../utils/pokeType";
 
-class Detail extends Page {
+class Detail extends Component {
     template() {
       const {info, species} = this.$state
       const types = (info?.types ?? []).reduce((acc, curr) => 

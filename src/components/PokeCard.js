@@ -1,8 +1,8 @@
-import Component from "../core/Component";
+import CardComponent from "../core/CardComponent";
 import { IMG_END_POINT } from "../service/api";
 import PokeInfo from "./PokeInfo";
 
-class PoketCard extends Component {
+class PoketCard extends CardComponent {
     template() {
 		const {pokemonId, name} = this.$props.pokemon
     return ` 

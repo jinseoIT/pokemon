@@ -1,6 +1,6 @@
-import Page from "../core/Page";
+import Component from "../core/Component";
 
-class NotFound extends Page {
+class NotFound extends Component {
     template() {
         return `
         <main>
