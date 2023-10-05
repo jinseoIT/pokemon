@@ -57,8 +57,12 @@ class Detail extends Component {
 
     async $getPokemonDetail(pokemonId) {
 			// @TODO PromiseAll 변경필요
-			const species = await getPokemoSpecies(pokemonId);
-			const info = await getPokemonInfo(pokemonId);
+      // console.time('promise all example');
+      const [species, info] = await Promise.all([
+        getPokemoSpecies(pokemonId),
+        getPokemonInfo(pokemonId)
+      ]);
+      // console.timeEnd('promise all example');
 			this.setState({info, species})
 		}
 
