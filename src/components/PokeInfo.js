@@ -28,13 +28,41 @@ class PokeInfo extends Component {
 			this.$getPokemonDetail();
 		}
 
+		// async $getPokemonDetail() {
+		// 	const {pokemonId} = this.$props;
+		// 	// @TODO PromiseAll 변경필요 or PromiseAllSetteld
+		// 	const species = await getPokemoSpecies(pokemonId);
+		// 	const info = await getPokemonInfo(pokemonId);
+		// 	this.setState({info, species})
+		// }
+
 		async $getPokemonDetail() {
 			const {pokemonId} = this.$props;
-			// @TODO PromiseAll 변경필요 or PromiseAllSetteld
-			const species = await getPokemoSpecies(pokemonId);
-			const info = await getPokemonInfo(pokemonId);
-			this.setState({info, species})
+      const callReqs = [getPokemoSpecies(pokemonId), getPokemonInfo(pokemonId)];
+      const results = await Promise.allSettled(callReqs); 
+      const [species, info] = results.map((result,idx) => {
+        if(result.status === 'rejected') {
+					console.log("rejected");;
+          this.retryApi(callReqs[idx], idx, 3).then(data => {
+            return data;
+          });
+        } 
+        return result.value;
+      })
+			this.setState({species, info})
 		}
+
+    async retryApi(PromiseReq, idx, count) {
+      console.log("count ::", count);
+      if(!count) return null
+      count--;
+      try {
+        const result = await PromiseReq();
+        return result;
+      } catch (error) {
+        return this.retryApi(PromiseReq, idx, count);
+      }
+    }
 }
 
 export default PokeInfo;

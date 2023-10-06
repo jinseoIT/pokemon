@@ -27,3 +27,13 @@ export const getPokemoSpecies = async (poketmonId) => {
 export const getPokemonInfo = async (poketmonId) => {
   return request(`pokemon/${poketmonId}`)
 }
+
+export const getNetwork = async (isResolve) => {
+  return new Promise((resolve, reject) => {
+    if(isResolve){
+      resolve('success');
+    } else {
+      reject(new Error("this is error"));
+    }
+  });
+}
