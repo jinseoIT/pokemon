@@ -12,7 +12,9 @@ export const request = async (url, options = {}) => {
     }
     throw new Error('API 통신 실패')
   } catch (e) {
-    console.log(e.message);
+    return new Promise((resolve, reject) => {
+        reject(new Error("API 통신 실패"));
+    });
   }
 }
 

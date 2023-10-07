@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Component from "../core/Component";
 import '../styles/components/detail.css'
-import { IMG_END_POINT, getNetwork, getPokemoSpecies, getPokemonInfo } from "../service/api";
+import { IMG_END_POINT, getPokemoSpecies, getPokemonInfo } from "../service/api";
 import { convertedText } from "../utils/convertText";
 import { typeColor, typeIcon } from "../utils/pokeType";
 
@@ -49,7 +49,6 @@ class Detail extends Component {
 
     mounted() {
       const $header = document.querySelector('.header');
-      
       new Header($header, {
         hedaer: $header
       })
@@ -59,9 +58,9 @@ class Detail extends Component {
       const callReqs = [getPokemoSpecies(pokemonId), getPokemonInfo(pokemonId)];
       const results = await Promise.allSettled(callReqs); 
 
-      const [species, info] = results.map((result,idx) => {
+      const [species, info] = results.map((result, idx) => {
         if(result.status === 'rejected') {
-          this.retryApi(callReqs[idx], idx, 3).then(data => {
+          this.retryApi(callReqs[idx], 3).then(data => {
             return data;
           });
         } 
@@ -70,15 +69,14 @@ class Detail extends Component {
 			this.setState({species, info})
 		}
 
-    async retryApi(PromiseReq, idx, count) {
-      console.log("count ::", count);
-      if(!count) return null
+    async retryApi(PromiseReq, count) {
+      if(!count) return {};
       count--;
       try {
         const result = await PromiseReq();
         return result;
       } catch (error) {
-        return this.retryApi(PromiseReq, idx, count);
+        return this.retryApi(PromiseReq, count);
       }
     }
     
