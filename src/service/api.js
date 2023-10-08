@@ -1,5 +1,6 @@
-export const API_END_POINT = 'https://pokeapi.co/api/v2/'
-export const IMG_END_POINT = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/'
+export const API_END_POINT = 'https://pokeapi.co/api/v2/';
+export const IMG_END_POINT = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/';
+export const IMG_ERROR_END_POINT = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
 export const request = async (url, options = {}) => {
   try {

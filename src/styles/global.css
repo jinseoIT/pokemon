@@ -55,11 +55,12 @@
     cursor: pointer;
   }
   
-  /* #app {
-    width: 100vw;
-    max-width: 640px;
-    height: 100vh;
-  
-    padding: 0 1rem;
-  } */
-  
+  @font-face { 
+    font-family: "Galmuri14";
+    src: url("../assets/fonts/Galmuri14.woff2") format("woff2");
+    font-display: swap ;
+  }
+
+  * {
+    font-family: "Galmuri14", sans-serif;
+  }
