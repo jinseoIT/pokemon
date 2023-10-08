@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Component from "../core/Component";
 import '../styles/components/detail.css'
-import { IMG_END_POINT, getPokemoSpecies, getPokemonInfo } from "../service/api";
+import { IMG_END_POINT, IMG_ERROR_END_POINT, getPokemoSpecies, getPokemonInfo } from "../service/api";
 import { convertedText } from "../utils/convertText";
 import { typeColor, typeIcon } from "../utils/pokeType";
 
@@ -19,7 +19,7 @@ class Detail extends Component {
       <main>
         <div class="pokemon_detail_container">
           <div class="pokemon_img_wrap">
-            <img src='${IMG_END_POINT}${this.$params}.gif' alt='포켓몬 이미지' width="120" height="120"/>
+            <img src='${IMG_END_POINT}${this.$params}.gif' onerror="this.src='${IMG_ERROR_END_POINT}${pokemonId}.png'" alt='포켓몬 이미지' width="120" height="120"/>
           </div>
           <p>No.${String(this.$params).padStart(4,'0')}</p>
           <h3>${species?.names?.[2]?.name ?? ''}</h3>
