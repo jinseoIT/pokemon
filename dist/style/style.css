@@ -104,14 +104,15 @@ table {
     cursor: pointer;
   }
   
-  /* #app {
-    width: 100vw;
-    max-width: 640px;
-    height: 100vh;
-  
-    padding: 0 1rem;
-  } */
-  
+  @font-face { 
+    font-family: "Galmuri14";
+    src: url(/pokemon/src/assets/1407a16de990326e6c56.woff2) format("woff2");
+    font-display: swap ;
+  }
+
+  * {
+    font-family: "Galmuri14", sans-serif;
+  }
 .header {
     display: flex;
     justify-content: center;
