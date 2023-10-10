@@ -48,6 +48,7 @@
 .pokemon_detail_container .flavor_txt {
   display: inline-block;
   margin-top: 15px;
+  line-height: 23px;
 }
 
 .poke_size_container {
